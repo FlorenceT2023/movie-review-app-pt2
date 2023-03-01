@@ -1,6 +1,5 @@
 import express from 'express';
 import path from 'path';
-import fs from 'fs';
 import { MongoClient } from 'mongodb';
 import { fileURLToPath } from 'url';
 import multer from 'multer';
