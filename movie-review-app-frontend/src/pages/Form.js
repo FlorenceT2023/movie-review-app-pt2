@@ -1,45 +1,18 @@
 import React, { useRef } from 'react';
 
 
-export function LeaveReview(props) {
+export function LeaveReview() {
 
     const movieTitle = useRef();
     const movieReleaseDate = useRef();
     const movieActors = useRef();
-    const moviePoster = useRef();
     const movieRating = useRef();
-    
-    // const submit = (event) => {
-
-    //     event.preventDefault();
-    //     const movieData = [];
-    //     props.movies.forEach( movie => {
-    //         movieData.push(movie);
-    //     })
-
-    //     const title = movieTitle.current.value;
-    //     const releaseDate = movieReleaseDate.current.value;
-    //     const actors = movieActors.current.value;
-    //     const poster = moviePoster.current.value;
-    //     const rating = movieRating.current.value;
-        
-    //     movieData.push({"id": id, "title": title, "release_date": releaseDate, "actors": actors, "image": poster, "rating": rating});
-    //     props.setMovies(movieData);
-    //     const id = props.movies.length + 1;
-    //     alert(`${title} has been added!`);
-    //     movieTitle.current.value = "";
-    //     movieReleaseDate.current.value = "";
-    //     movieActors.current.value = "";
-    //     moviePoster.current.value = "";
-    //     movieRating.current.value = "";
-    // }
-
 
     return (
         <>
         <center>
             <h2>Submit Review</h2>
-            <form method="post">
+            <form method="post" action="/api/review" enctype="multipart/form-data">
                 <label> Movie Title: 
                     <input
                     name = "title"
@@ -59,15 +32,8 @@ export function LeaveReview(props) {
                     type = "text" />
                 </label><br />
                 <label> Movie Poster:
-                    <select name = "image" ref={moviePoster}>
-                        <option>/images/popcorn_placeholder.png</option>
-                        <option>/images/terminator2.jpg</option>
-                        <option>/images/grand_budapest_hotel.jpg</option>
-                        <option>/images/office_space.jpg</option>
-                        <option>/images/turning_red.jpg</option>
-                        <option>/images/Princess_Mononoke.png</option>
-                    </select>
-                </label><br />
+                    <input type="file" name="movie_poster" />
+                    </label><br />
                 <label> Rating:
                     <select name="rating" ref={movieRating}>
                         <option>1</option>
