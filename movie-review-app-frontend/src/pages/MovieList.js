@@ -40,7 +40,7 @@ function MovieList(props) {
 
     return (
       <>
-        <Container>
+        <Container align='center'>
             {props.movies.map((movie) => (
                 <Col sm={12} md={6} lg={4} className='primary mb-4'>
                   <Card className='m-2 h-100'>
