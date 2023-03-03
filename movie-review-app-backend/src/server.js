@@ -18,6 +18,10 @@ app.use(express.static(path.join(__dirname, '../posters')));
 
 const upload = multer({ dest: 'posters/'});
 
+app.get(/^(?!\/api).+/, (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'))
+  });
+
 // Displays movies on webpage
 app.get('/api/movies', async (req, res) => {
     const client = new MongoClient('mongodb://127.0.0.1:27017');
