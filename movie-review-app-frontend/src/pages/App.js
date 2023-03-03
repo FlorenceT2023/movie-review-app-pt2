@@ -3,6 +3,8 @@ import { useState, useEffect} from "react";
 import { Routes, Route } from 'react-router-dom';
 import { LeaveReview } from './Form';
 import MovieList from './MovieList';
+import Spinner from 'react-bootstrap/Spinner';
+
 
 
 function App() {
@@ -17,10 +19,13 @@ function App() {
   }, [])
 
   if( movies == null) {
-    return <center><h1><br /><br /><br /><br />Loading...</h1></center>;
+    
+    return (
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+      );
   }
-
-  console.log(movies);
   
   return (
     // directs user to appropriate pages
