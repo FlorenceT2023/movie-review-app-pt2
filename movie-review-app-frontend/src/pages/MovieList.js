@@ -41,9 +41,10 @@ function MovieList(props) {
     return (
       <>
         <Container align='center'>
+          <Row style={{ width: '100%', height:'100%', padding: '15px'}}>
             {props.movies.map((movie) => (
                 <Col sm={12} md={6} lg={4} className='primary mb-4'>
-                  <Card className='m-2 h-100'>
+                  <Card>
                     <Card.Img
                       className='img-responsive img-thumbnail' 
                       variant='top' 
@@ -51,18 +52,22 @@ function MovieList(props) {
                     />
                     <Card.Body> 
                       <Card.Title>{movie.title}</Card.Title>
-                      <Card.Text>Release Date: {movie.release_date}</Card.Text>
-                      <Card.Text>Actors: {movie.actors}</Card.Text>
-                      <Card.Text>Rating: {`${movie.rating}/5`}</Card.Text>
+                      <Card.Text>Release Date: {movie.release_date}
+                      <br />Actors: {movie.actors}
+                      <br />Rating: {`${movie.rating}/5`}</Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                      <Button variant='outline-primary' type='button' onClick={() => removeTitle(movie.title)}>
+                      <Button 
+                      variant='outline-primary' 
+                      type='button' 
+                      onClick={() => removeTitle(movie.title)}>
                         Remove
                       </Button>
                     </Card.Footer>
                   </Card>
                 </Col>
               ))}
+          </Row>
         </Container>
         <br /><br /><center>©Florence Tat. 2023</center>
       </>

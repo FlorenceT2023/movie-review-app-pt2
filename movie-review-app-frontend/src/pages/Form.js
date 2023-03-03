@@ -24,26 +24,18 @@ export function LeaveReview() {
                 <Form.Group className="mb-3" controlId="formMovieTitle">
                     <Form.Label>Movie Title</Form.Label>
                     <Form.Control name='title' type='text' ref={movieTitle} placeholder='Enter movie title' />
-                    <Form.Text className="text-muted">
-                    </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formMovieRelease">
                     <Form.Label>Release Date (yyyy-mm-dd)</Form.Label>
                     <Form.Control name='release_date' type='text' ref={movieReleaseDate} placeholder='Enter release date' />
-                    <Form.Text className="text-muted">
-                    </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formMovieActors">
                     <Form.Label>Actors</Form.Label>
                     <Form.Control name='actors' type='text' ref={movieActors} placeholder='Enter actors' />
-                    <Form.Text className="text-muted">
-                    </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formMoviePoster">
                     <Form.Label>Upload Movie Poster</Form.Label>
                     <Form.Control name='movie_poster' type='file' />
-                    <Form.Text className="text-muted">
-                    </Form.Text>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formMovieRating">
                     <Form.Label>Rating</Form.Label>
